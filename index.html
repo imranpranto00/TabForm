@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Height Tabs with Forms</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/tab.js"></script>
+</head>
+<body>
+            <!-- Header Section -->
+            <header class="header">
+                <div class="logo">
+                    <img src="images/walton logo.png" alt="Walton Logo">
+                </div>
+                <div class="welcome-message">
+                    <h1>Welcome!</h1>
+                    <p>Fayz</p>
+                </div>
+                <div class="actions">
+                    <div class="action-item">
+                        <img src="images/change password.png" alt="Password Icon"
+                            class="icon">
+                        <a href="#">Change Password</a>
+                    </div>
+                    <div class="action-item">
+                        <img src="images/logout.png" alt="Logout Icon" class="icon">
+                        <a href="#">Logout</a>
+                    </div>
+                </div>
+            </header>
+    
+            <!-- Navigation Bar Section -->
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Purchase &#x25BC;</a></li>
+                    <li><a href="#">Inventory &#x25BC;</a></li>
+                    <li><a href="#">Sales &#x25BC;</a></li>
+                    <li><a href="#">Accounts &#x25BC;</a></li>
+                    <li><a href="#">List &#x25BC;</a></li>
+                    <li><a href="#">WOSP &#x25BC;</a></li>
+                    <li><a href="#">VAT &#x25BC;</a></li>
+                    <li><a href="#">Knowledge &#x25BC;</a></li>
+                </ul>
+            </nav>
+
+            
+        <!-- New Section with Border and Texts -->
+        <div class="outer-border">
+            <div class="inner-border">
+                <div class="flex-container">
+                    <p class="left-text">Hire Sale</p>
+                    <div class="right-text-container">
+                        <p class="right-text"><strong>Walton
+                                Plaza-Kuril</strong></p>
+                        <p class="address">KA-227, South Kuril, Badda,
+                            Dhaka-1229</p>
+                    </div>
+                </div>
+            </div>
+            <!------------------tab----------------- -->
+            <div class="form-container">
+
+<div class="tab-container">
+    <!-- Tab buttons -->
+    <div class="tabs">
+        <button class="tab-link active" onclick="openTab(event, 'customerInfo')">Customer Information</button>
+        <button class="tab-link" onclick="openTab(event, 'guarantorInfo')">Guarantor Information</button>
+        <button class="tab-link" onclick="openTab(event, 'nomineeInfo')">Nominee Information</button>
+        <button class="tab-link" onclick="openTab(event, 'customerFamilyInfo')">Customer Family Information</button>
+        <button class="tab-link" onclick="openTab(event, 'customerOpinion')">কাস্টমার সম্পর্কে মতামত</button>
+        <button class="tab-link" onclick="openTab(event, 'investigatorInfo')">Investigator Information</button>
+    </div>
+
+    <!-- Tab content -->
+    <div class="tab-content" id="customerInfo">
+            <!-- Your form fields here -->
+                          <!-- Multi-Step Form -->
+                          <!-- <form id="multi-step-form"> -->
+        
+                            <!-- Step 1: Customer Information -->
+                            <!-- <div class="form-step active" id="step-1"> -->
+                               <h3>Customer Information</h3>
+                               <div class="form-section">
+                                   <div class="form-field">
+                                       <div class="form-group">
+                                           <input type="text" id="national-id" name="national-id" required placeholder=" ">
+                                           <label for="national-id">National ID <span class="required">*</span></label>
+                                       </div>
+                                       <small>Customer's national ID number</small>
+                                   </div>
+                                   <div class="form-field">
+                                       <div class="form-group">
+                                           <input type="text" id="customer-name" name="customer-name" required placeholder=" ">
+                                           <label for="customer-name">Customer Name <span class="required">*</span></label>
+                                       </div>
+                                   </div>
+                                   <div class="form-field">
+                                       <div class="form-group">
+                                           <input type="text" id="mobile-no" name="mobile-no" required placeholder=" ">
+                                           <label for="mobile-no">Mobile No <span class="required">*</span></label>
+                                       </div>
+                                       <small>Customer's 11-digit valid mobile number</small>
+                                   </div>
+                                   <div class="form-field">
+                                       <div class="form-group">
+                                           <input type="text" id="kisti-card-no" name="kisti-card-no" placeholder=" ">
+                                           <label for="kisti-card-no">Kisti Surokkha Card No</label>
+                                       </div>
+                                   </div>
+                           
+                               </div>
+                           
+                               <div class="form-section">
+                                   <div class="form-field">
+                                       <div class="form-group">
+                                           <input type="text" id="account-no" name="account-no" required placeholder=" ">
+                                           <label for="account-no">Account No <span class="required">*</span></label>
+                                       </div>
+                                       <small>Customer's account number. Leaving blank will generate an auto account number</small>
+                                   </div>
+                                   <div class="form-field">
+                                       <div class="form-group">
+                                           <textarea id="customer-address" name="customer-address" required placeholder=" "></textarea>
+                                           <label for="customer-address">Customer Address <span class="required">*</span></label>
+                                       </div>
+                                   </div>
+                                   <div class="form-field">
+                                       <div class="form-group">
+                                           <select id="first-guarantor-relation" name="first-guarantor-relation" required>
+                                               <option value="" disabled selected>Choose ID</option>
+                                               <option value="family">#</option>
+                                               <option value="friend">#</option>
+                                               <option value="colleague">#</option>
+                                           </select>
+                                            <label for="sale-by">Sale By <span class="required">*</span></label>
+                                       </div>
+                                       <small>Mention Salesman ID</small>
+                                   </div>
+                                   <div class="form-field">
+                                       <div class="form-group">
+                                           <input type="text" id="credit-limit" name="credit-limit" required placeholder=" ">
+                                           <label for="credit-limit">Credit Limit <span class="required">*</span></label>
+                                       </div>
+                                   </div>
+                                   <div class="form-field">
+                                       <div class="form-group">
+                                           <input type="date" id="customer-dob" name="customer-dob" required placeholder=" ">
+                                           <label for="customer-dob">Customer DOB <span class="required">*</span></label>
+                                       </div>
+                                       <small>Customer's Date of birth</small>
+                                   </div>
+                               </div>
+                           </div>
+    
+    <!-- </div> -->
+
+    <div class="tab-content" id="guarantorInfo" style="display:none;">
+  <!-- Step 2: Guarantor Information -->
+  <!-- <div class="form-step" id="step-2"> -->
+    <h3>Guarantor Information</h3>
+ <!-- First Guarantor -->
+ <h4>First Guarantor</h4>
+ <div class="form-section">
+     <div class="form-field">
+         <div class="form-group">
+             <input type="text" id="first-guarantor-name" name="first-guarantor-name" required placeholder=" ">
+             <label for="first-guarantor-name">First Guarantor Name <span class="required">*</span></label>
+         </div>
+     </div>
+     <div class="form-field">
+         <div class="form-group">
+             <input type="text" id="first-guarantor-mobile" name="first-guarantor-mobile" required placeholder=" ">
+             <label for="first-guarantor-mobile">First Guarantor Mobile No <span class="required">*</span></label>
+         </div>
+     </div>
+     <div class="form-field">
+         <div class="form-group">
+             <select id="first-guarantor-relation" name="first-guarantor-relation" required>
+                 <option value="" disabled selected>Choose Relation</option>
+                 <option value="family">Family</option>
+                 <option value="friend">Friend</option>
+                 <option value="colleague">Colleague</option>
+             </select>
+             <label for="first-guarantor-relation">Relation with Customer <span class="required">*</span></label>
+             <small>With Customer</small>
+         </div>
+     </div>
+     <div class="form-field">
+         <div class="form-group">
+             <input type="text" id="first-guarantor-employee-id" name="first-guarantor-employee-id" placeholder=" ">
+             <label for="first-guarantor-employee-id">Employee ID</label>
+             <small>If Guarantor is Walton Group Employee</small>
+         </div>
+     </div>
+     <div class="form-field">
+         <div class="form-group">
+             <textarea id="first-guarantor-address" name="first-guarantor-address" required placeholder=" "></textarea>
+             <label for="first-guarantor-address">Guarantor Address <span class="required">*</span></label>
+         </div>
+     </div>
+     <div class="form-field">
+         <div class="form-group">
+             <input type="text" id="first-guarantor-national-id" name="first-guarantor-national-id" placeholder=" ">
+             <label for="first-guarantor-national-id">Guarantor National ID</label>
+         </div>
+     </div>
+ </div>
+
+ <!-- Second Guarantor -->
+ <h4>Second Guarantor</h4>
+ <div class="form-section">
+     <div class="form-field">
+         <div class="form-group">
+             <input type="text" id="second-guarantor-name" name="second-guarantor-name" required placeholder=" ">
+             <label for="second-guarantor-name">Second Guarantor Name <span class="required">*</span></label>
+         </div>
+     </div>
+     <div class="form-field">
+         <div class="form-group">
+             <input type="text" id="second-guarantor-mobile" name="second-guarantor-mobile" required placeholder=" ">
+             <label for="second-guarantor-mobile">Second Guarantor Mobile No <span class="required">*</span></label>
+         </div>
+     </div>
+     <div class="form-field">
+         <div class="form-group">
+             <select id="second-guarantor-relation" name="second-guarantor-relation" required>
+                 <option value="" disabled selected>Choose Relation</option>
+                 <option value="family">Family</option>
+                 <option value="friend">Friend</option>
+                 <option value="colleague">Colleague</option>
+             </select>
+             <label for="second-guarantor-relation">Relation with Customer <span class="required">*</span></label>
+             <small>With Customer</small>
+         </div>
+     </div>
+     <div class="form-field">
+         <div class="form-group">
+             <input type="text" id="second-guarantor-employee-id" name="second-guarantor-employee-id" placeholder=" ">
+             <label for="second-guarantor-employee-id">Employee ID</label>
+             <small>If Guarantor is Walton Group Employee</small>
+         </div>
+     </div>
+     <div class="form-field">
+         <div class="form-group">
+             <textarea id="second-guarantor-address" name="second-guarantor-address" required placeholder=" "></textarea>
+             <label for="second-guarantor-address">Guarantor Address <span class="required">*</span></label>
+         </div>
+     </div>
+     <div class="form-field">
+         <div class="form-group">
+             <input type="text" id="second-guarantor-national-id" name="second-guarantor-national-id" placeholder=" ">
+             <label for="second-guarantor-national-id">Guarantor National ID</label>
+         </div>
+     </div>
+     <div class="form-field">
+         <div class="form-group">
+             <input type="text" id="purchaser-bin" name="purchaser-bin" placeholder=" ">
+             <label for="purchaser-bin">Purchaser Bin</label>
+         </div>
+     </div>
+ </div>
+    </div>
+    <!-- </div> -->
+
+    <div class="tab-content" id="nomineeInfo" style="display:none;">
+                   <!-- Step 3: Nominee Information -->
+                   <!-- <div class="form-step" id="step-3"> -->
+                    <h3>Nominee Information</h3>
+                
+                    <!-- Options -->
+                    <div class="nominee-options">
+                        <label>
+                            <input type="radio" id="sameAsFirstGuarantor" name="nominee" value="first-guarantor" onchange="handleNomineeSelection()"> Same As First Guarantor
+                        </label>
+                        <label>
+                            <input type="radio" id="sameAsSecondGuarantor" name="nominee" value="second-guarantor" onchange="handleNomineeSelection()"> Same As Second Guarantor
+                        </label>
+                        <label>
+                            <input type="radio" id="newNominee" name="nominee" value="new-nominee" onchange="handleNomineeSelection()"> New Nominee
+                        </label>
+                    </div>
+                
+                    <!-- Form Fields -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="nominee-name" name="nominee-name" required placeholder=" ">
+                            <label for="nominee-name">Nominee Name <span class="required">*</span></label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="nominee-mobile" name="nominee-mobile" required placeholder=" ">
+                            <label for="nominee-mobile">Nominee Mobile No <span class="required">*</span></label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <select id="nominee-relation" name="nominee-relation" required>
+                                <option value="" disabled selected>Choose Relation</option>
+                                <option value="family">Family</option>
+                                <option value="friend">Friend</option>
+                                <option value="colleague">Colleague</option>
+                            </select>
+                            <label for="nominee-relation">Relation with Customer <span class="required">*</span></label>
+                            <small>With Customer</small>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" id="nominee-dob" name="nominee-dob" required placeholder=" ">
+                            <label for="nominee-dob">Nominee DOB <span class="required">*</span></label>
+                            <small>Nominee's Date of birth</small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <textarea id="nominee-address" name="nominee-address" required placeholder=" "></textarea>
+                            <label for="nominee-address">Nominee Address <span class="required">*</span></label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="nominee-national-id" name="nominee-national-id" required placeholder=" ">
+                            <label for="nominee-national-id">Nominee National ID <span class="required">*</span></label>
+                        </div>
+                    </div>
+                </div>
+    <!-- </div> -->
+
+    <div class="tab-content" id="customerFamilyInfo" style="display:none;">
+     <!-- 4th Step Customer Family Information -->
+     <!-- <div class="form-step" id="step-4"> -->
+        <div class="navbar-form" id="step-4">
+            <div class="navbar-header">
+                <h3>Customer Family Information</h3>
+            </div>
+            <div class="navbar-content">
+                <div class="navbar-item">
+                    <label for="same-as">Same As</label>
+                    <select id="same-as">
+                        <option value="first-guarantor">First Guarantor</option>
+                        <option value="second-guarantor">Second Guarantor</option>
+                        <option value="nominee">Nominee</option>
+                        <option value="new">New</option>
+                    </select>
+                </div>
+                <div class="navbar-item">
+                    <label for="birth-nid">Birth/NID</label>
+                    <select id="birth-nid">
+                        <option value="birth">Birth</option>
+                        <option value="nid">NID</option>
+                    </select>
+                </div>
+                <div class="navbar-item">
+                    <label for="number">Number</label>
+                    <input type="text" id="number" placeholder="Enter Number">
+                </div>
+                <div class="navbar-item">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter Name">
+                </div>
+                <div class="navbar-item">
+                    <label for="father-name">Father Name</label>
+                    <input type="text" id="father-name" placeholder="Enter Father's Name">
+                </div>
+                <div class="navbar-item">
+                    <label for="mother-name">Mother Name</label>
+                    <input type="text" id="mother-name" placeholder="Enter Mother's Name">
+                </div>
+                <div class="navbar-item">
+                    <label for="mobile">Mobile</label>
+                    <input type="text" id="mobile" placeholder="Enter Mobile Number">
+                </div>
+                <div class="navbar-item">
+                    <label for="relation">Relation With</label>
+                    <select id="relation">
+                        <option value="father">Father</option>
+                        <option value="mother">Mother</option>
+                        <option value="sibling">Sibling</option>
+                        <option value="relative">Relative</option>
+                    </select>
+                </div>
+                <div class="navbar-item action-logo">
+                    <label for="action">Action</label>
+                    <div>
+                        <img src="images/action.png" alt="Action Logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+       
+    <!-- </div> -->
+
+    <div class="tab-content" id="customerOpinion" style="display:none;">
+<!-- ---------------customers opinion---------- -->
+<!-- <div class="form-step" id="step-5"> -->
+    <h3>কাস্টমার সম্পর্কে মতামত</h3>
+
+    <!-- Question 1 -->
+    <div class="form-question">
+        <label id = "radio">১) কাস্টমারের আচরণ ভালো কিনা?</label>
+        <div class="options">
+            <input type="radio" id="behavior-yes" name="behavior" value="yes">
+            <label for="behavior-yes">হ্যাঁ</label>
+            <input type="radio" id="behavior-no" name="behavior" value="no">
+            <label for="behavior-no">না</label>
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="form-question">
+        <label id = "radio">২) কাস্টমারের সামাজিক অবস্থান কেমন?</label>
+        <div class="options">
+            <input type="radio" id="social-status-yes" name="social-status" value="yes">
+            <label for="social-status-yes">হ্যাঁ</label>
+            <input type="radio" id="social-status-no" name="social-status" value="no">
+            <label for="social-status-no">না</label>
+        </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="form-question">
+        <label id = "radio">৩) কাস্টমার নেশাগ্রস্থ কিনা?</label>
+        <div class="options">
+            <input type="radio" id="addicted-yes" name="addicted" value="yes">
+            <label for="addicted-yes">হ্যাঁ</label>
+            <input type="radio" id="addicted-no" name="addicted" value="no">
+            <label for="addicted-no">না</label>
+        </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="form-question">
+        <label id = "radio">৪) কাস্টমার এলাকায় সন্ত্রাসী কি না?</label>
+        <div class="options">
+            <input type="radio" id="terrorist-yes" name="terrorist" value="yes">
+            <label for="terrorist-yes">হ্যাঁ</label>
+            <input type="radio" id="terrorist-no" name="terrorist" value="no">
+            <label for="terrorist-no">না</label>
+        </div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="form-question">
+        <label id = "radio">৫) কাস্টমার রাজনীতির সহিত জরিত কিনা?</label>
+        <div class="options">
+            <input type="radio" id="politics-yes" name="politics" value="yes">
+            <label for="politics-yes">হ্যাঁ</label>
+            <input type="radio" id="politics-no" name="politics" value="no">
+            <label for="politics-no">না</label>
+        </div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="form-question">
+        <label id = "radio">৬) কাস্টমার কিস্তির টাকা সঠিকভাবে পরিশোধ করবে কি না?</label>
+        <div class="options">
+            <input type="radio" id="installment-yes" name="installment" value="yes">
+            <label for="installment-yes">হ্যাঁ</label>
+            <input type="radio" id="installment-no" name="installment" value="no">
+            <label for="installment-no">না</label>
+        </div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="form-question">
+        <label id = "radio">৭) কাস্টমারের পেশা কি?</label>
+        <select id="profession" name="profession">
+            <option value="business">ব্যাবসা</option>
+            <option value="job">চাকুরী</option>
+            <option value="student">ছাত্র</option>
+            <option value="politics">রাজনীতি</option>
+            <option value="homemaker">গৃহিণী</option>
+        </select>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="form-question">
+        <label id = "radio">৮) সার্বিক বিবেচনায় ক্রেতার কাছে পণ্য বিক্রিতে আপনার আগ্রহ আছে কিনা?</label>
+        <div class="options">
+            <input type="radio" id="interest-yes" name="interest" value="yes">
+            <label for="interest-yes">হ্যাঁ</label>
+            <input type="radio" id="interest-no" name="interest" value="no">
+            <label for="interest-no">না</label>
+        </div>
+    </div>
+
+
+</div>
+
+
+    <!-- </div> -->
+
+    <div class="tab-content" id="investigatorInfo" style="display:none;">
+<!-- ----------------investigator --------------->
+ <!-- Step 5: Investigator Information -->
+ <!-- <div class="form-step" id="step-6"> -->
+    <h3>Investigator Information</h3>
+    <div class="form-investigetor-container">
+            <!-- Investigator ID -->
+            <div class="form-investigetor-group">
+                <input type="text" id="investigator-id" placeholder=" " required>
+                <label for="investigator-id">Investigator ID <span class="required">*</span></label>
+            </div>
+
+            <!-- Investigation Note -->
+            <div class="form-investigetor-group">
+                <textarea id="investigation-note" placeholder=" " required></textarea>
+                <label for="investigation-note">Investigation Note <span class="required">*</span></label>
+            </div>
+
+            <!-- Remarks -->
+            <div class="form-investigetor-group">
+                <select id="remarks" required>
+                    <option value="" disabled selected>Choose an option</option>
+                    <option value="tv-exchange">TV Exchange</option>
+                    <option value="ac-exchange">AC Exchange</option>
+                </select>
+                <label for="remarks">Remarks <span class="required">*</span></label>
+            </div>
+        </div>
+                       <!-- Button Container -->
+                       <div class="button-container">
+                        <button type="button" class="btn" id="next-btn">Submit</button>
+                    </div>
+        </div>
+    <!-- </form> -->
+
+       
+    <!-- </div> -->
+</div>
+            </div>
+            </div>
+            
+
+</body>
+</html>
